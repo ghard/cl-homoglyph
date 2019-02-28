@@ -1,3 +1,14 @@
+;;;; -*- Mode: Lisp -*-
+;;;
+;;; tests.lisp
+;;;
+;;; Some trivial tests for the homoglyph library
+;;;
+;;; License: MIT
+;;;
+;;; Copyright (c) 2019 Yrjänä Rankka
+;;;
+
 (in-package #:cl-homoglyph-tests)
 
 (def-suite :all-tests :description "Simple tests")
@@ -14,3 +25,4 @@
       (is-true 
        (homoglyph-str-p (homoglyphise-string tstr homoglyph-db) tstr homoglyph-db)))))
 
+;;; EOF
