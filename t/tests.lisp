@@ -14,5 +14,3 @@
       (is-true 
        (homoglyph-str-p (homoglyphise-string tstr homoglyph-db) tstr homoglyph-db)))))
 
-(test foo
-  (is (= 1 1)))
