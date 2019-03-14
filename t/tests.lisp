@@ -19,7 +19,7 @@
   (let ((homoglyph-db (make-homoglyph-db-from-uri)))
     (&body)))
 
-(test homoglyphise-and-test
+(test test1
   (with-fixture db-from-uri ()
     (let ((tstr "Rivon rovion orit toreilla"))
       (is-true 

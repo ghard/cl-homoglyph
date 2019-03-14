@@ -11,7 +11,7 @@
   :license "MIT"
   :depends-on (#:alexandria #:drakma #:split-sequence)
   :serial t
-  :in-order-to ((test-op (test-op "cl-homoglyph-tests")))
+  :in-order-to ((test-op (test-op #:cl-homoglyph-tests)))
   :components ((:module #:cl-homoglyph-lib
                         :pathname "src/"
                         :components ((:file "package")

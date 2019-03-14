@@ -10,12 +10,14 @@
   :author "Yrjänä Rankka <ghard@zonk.net>"
   :license "MIT"
   :depends-on (#:fiveam #:cl-homoglyph)
-  :serial t
-  :perform (test-op (o s)
-                    (uiop:symbol-call :fiveam :run! 'cl-homoglyph-tests:all-tests))
   :components ((:module #:cl-homoglyph-tests
+                        :serial t
                         :pathname "t/"
                         :components ((:file "package")
-                                     (:file "tests")))))
+                                     (:file "tests"))))
+  :perform (test-op (o s)
+                    (uiop:symbol-call :fiveam
+                                      '#:run!
+                                      (uiop:find-symbol* '#:all-tests :cl-homoglyph-tests))))
 
 ;;; EOF
