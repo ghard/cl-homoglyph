@@ -20,15 +20,12 @@
 
 (defun homoglyph-str-p (str1 str2 &optional (db *homoglyph-db*))
   "Test if str1 is a homoglyph equivalent to str2"
-  (if (not (= (length str1)
-              (length str2)))
-      nil
-      (loop
-         for c1 across str1
-         for c2 across str2
-         do (when (not (homoglyph-p c1 c2 (car db)))
-              (return-from homoglyph-str-p nil))))
-  t)
+  (and (= (length str1)
+          (length str2))
+       (every #'(lambda (c1 c2)
+                  (homoglyph-p c1 c2 (car db)))
+              str1
+              str2)))
 
 (defun find-random-homoglyph (c &optional (db *homoglyph-db*))
   "Return a random homoglyph of char c - returns c if none is found"
